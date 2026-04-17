@@ -1,521 +1,373 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dompetku – Asisten keuangan pribadi via WhatsApp. Catat pemasukan & pengeluaran, pantau keuangan, tanpa aplikasi tambahan." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dompetku - Asisten keuangan pintar via WhatsApp. Catat pemasukan & pengeluaran hanya dengan chat, tanpa aplikasi ribet.">
+  <meta name="theme-color" content="#0b0f19">
   <title>Dompetku – Asisten Keuangan via WhatsApp</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- ============================================================
-       STYLE SECTION
-       Warna utama:
-         --blue-dark  : biru tua (brand utama)
-         --blue-mid   : biru medium (aksen)
-         --green-wa   : hijau WhatsApp (CTA)
-         --gray-soft  : abu-abu lembut (background section)
-         --gray-text  : abu-abu gelap (body text)
-       ============================================================ -->
- 
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <!-- Background Pattern -->
+  <div class="bg-pattern" aria-hidden="true"></div>
 
-  <!-- ============================================================
-       HEADER / NAV
-       Sticky header dengan logo teks dan anchor nav
-       ============================================================ -->
+  <!-- HEADER -->
   <header>
-    <nav class="container">
-      <a href="#hero" class="logo">Dompet<span>ku</span></a>
-
-      <!-- Hamburger untuk mobile -->
-      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="container nav-container">
+      <a href="#" class="logo" aria-label="Dompetku Home">Dompet<span>ku</span></a>
+      <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
       </button>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#fitur">Fitur</a></li>
-        <li><a href="#cara-pakai">Cara Pakai</a></li>
-        <li><a href="#keunggulan">Keunggulan</a></li>
-        <!-- Tombol CTA di nav -->
-        <li><a href="#cta" class="nav-cta">Coba Sekarang</a></li>
-      </ul>
-    </nav>
+      <nav class="nav-links" id="nav-menu">
+        <a href="#fitur">Fitur</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#proses">Cara Kerja</a>
+        <a href="#harga">Paket</a>
+        <a href="https://wa.me/6283121376756" class="nav-cta" target="_blank" rel="noopener noreferrer">Coba Sekarang</a>
+      </nav>
+    </div>
   </header>
 
-
-  <!-- ============================================================
-       HERO SECTION
-       Judul kuat + subjudul + 2 tombol + ilustrasi chat card
-       ============================================================ -->
+  <!-- HERO -->
   <section id="hero">
-    <div class="container">
-      <div class="hero-inner">
-
-        <!-- Teks kiri -->
-        <div class="hero-copy reveal">
-          <div class="hero-badge">Asisten Keuangan WhatsApp</div>
-
-          <h1 class="hero-title">
-            Uangmu ke mana?<br>
-            <em>Dompetku jawab.</em>
-          </h1>
-
-          <p class="hero-sub">
-            Catat pemasukan &amp; pengeluaran langsung lewat chat WhatsApp.
-            Tidak perlu aplikasi baru, tidak perlu belajar lagi. Kirim pesan,
-            Dompetku yang urus sisanya.
-          </p>
-
-          <div class="btn-group">
-            <!-- CTA utama → link WA -->
-            <a href="https://wa.me/6283121376756" target="_blank" rel="noopener" class="btn btn-primary">
-              <!-- Ikon WhatsApp SVG inline -->
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:white;">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              Coba Sekarang
-            </a>
-            <!-- Tombol sekunder → scroll ke cara pakai -->
-            <a href="#cara-pakai" class="btn btn-secondary">Lihat Cara Kerja ↓</a>
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <span class="badge">
+          <span class="badge-dot"></span>
+          AI-Powered Finance Bot
+        </span>
+        <h1 class="hero-title">Uangmu ke mana? <br><span class="gradient-text">Dompetku jawab.</span></h1>
+        <p class="hero-sub">Catat pemasukan & pengeluaran langsung lewat chat WhatsApp. Tanpa aplikasi baru, tanpa form. Kirim pesan, biarkan bot kami yang urus sisanya.</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">50K+</span>
+            <span class="stat-label">Pengguna Aktif</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2M+</span>
+            <span class="stat-label">Transaksi Tercatat</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4.9</span>
+            <span class="stat-label">Rating Pengguna</span>
           </div>
         </div>
+        <div class="btn-group">
+          <a href="https://wa.me/6283121376756" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.06-1.34A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.2-.51-4.48-1.37l-.32-.19-3.02.8.81-2.94-.21-.34A7.93 7.93 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.39-5.96c-.24-.12-1.41-.69-1.62-.77-.21-.08-.37-.12-.52.12-.15.24-.58.77-.71.92-.13.15-.26.17-.49.06-.23-.11-.97-.36-1.85-1.14-.68-.61-1.14-1.36-1.27-1.59-.13-.23-.01-.35.1-.46.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.52-1.26-.72-1.74-.19-.46-.38-.4-.52-.41l-.44-.01c-.15 0-.39.06-.6.3-.21.24-.81.79-.81 1.93 0 1.14.83 2.24.94 2.39.11.15 1.62 2.47 3.92 3.46.55.24.98.38 1.31.49.55.18 1.05.15 1.45.09.44-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
+            Mulai Catat Gratis
+          </a>
+          <a href="#proses" class="btn btn-secondary">Lihat Cara Kerja ↓</a>
+        </div>
+      </div>
 
-        <!-- Ilustrasi Chat Card (kanan) -->
-        <div class="hero-visual reveal" style="transition-delay: 0.15s;">
-          <div class="chat-card">
-            <!-- Header bar ala WhatsApp -->
-            <div class="chat-header">
-              <div class="chat-avatar">D</div>
-              <div class="chat-header-info">
-                <div class="chat-header-name">Dompetku</div>
-                <div class="chat-header-status">online</div>
-              </div>
-            </div>
-
-            <!-- Percakapan palsu sebagai ilustrasi produk -->
-            <div class="chat-body">
-              <div class="bubble bubble-out">
-                Keluar 35rb makan siang
-                <div class="bubble-time">11:42</div>
-              </div>
-              <div class="bubble bubble-in">
-                ✅ Tercatat! <strong>Makan siang</strong> <span class="highlight-red">−Rp 35.000</span><br>
-                Sisa hari ini: <span class="highlight-green">Rp 215.000</span>
-                <div class="bubble-time">11:42</div>
-              </div>
-              <div class="bubble bubble-out">
-                Laporan Hari ini
-                <div class="bubble-time">11:43</div>
-              </div>
-              <div class="bubble bubble-in">
-                📊 <strong>Laporan Hari Ini</strong><br>
-                Pemasukan: <span class="highlight-green">+Rp 2.500.000</span><br>
-                Pengeluaran: <span class="highlight-red">−Rp 1.120.000</span><br>
-                Sisa: <span class="highlight">Rp 1.380.000</span> 🎉
-                <div class="bubble-time">11:43</div>
-              </div>
-            </div>
-
-            <!-- Input bar dekoratif -->
-            <div class="chat-input-bar">
-              <div class="chat-input-field">Ketik pesan...</div>
-              <div class="chat-send-btn">
-                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      <!-- Mock Chat -->
+      <div class="hero-visual reveal">
+        <div class="chat-card">
+          <div class="chat-header">
+            <div class="chat-avatar" aria-hidden="true">D</div>
+            <div class="chat-header-info">
+              <div class="chat-header-name">Dompetku Bot</div>
+              <div class="chat-header-status">
+                <span class="status-dot"></span>online
               </div>
             </div>
           </div>
+          <div class="chat-body">
+            <div class="bubble bubble-out">
+              Gajian masuk 4.5jt
+              <div class="bubble-time">11:42 ✓✓</div>
+            </div>
+            <div class="bubble bubble-in">
+              ✅ <strong>Tercatat!</strong><br>
+              Pemasukan: <span class="highlight-green">+Rp 4.500.000</span><br>
+              Saldo hari ini: <span class="highlight-blue">Rp 4.500.000</span>
+              <div class="bubble-time">11:42</div>
+            </div>
+            <div class="bubble bubble-out">
+              Bayar kopi 35rb
+              <div class="bubble-time">11:45 ✓✓</div>
+            </div>
+            <div class="bubble bubble-in">
+              ✅ <strong>Tercatat!</strong><br>
+              Pengeluaran: <span class="highlight-red">-Rp 35.000</span><br>
+              Sisa: <span class="highlight-blue">Rp 4.465.000</span> 🎉
+              <div class="bubble-time">11:45</div>
+            </div>
+          </div>
+          <div class="chat-input-bar">
+            <div class="chat-input-field">Ketik pesan...</div>
+            <div class="chat-send-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </div>
+          </div>
         </div>
-
+        <div class="floating-badge badge-1">⚡ Auto Categorize</div>
+        <div class="floating-badge badge-2">🔒 End-to-End Encrypted</div>
       </div>
     </div>
   </section>
 
+  <!-- SOCIAL PROOF -->
+  <section id="testimoni" class="social-proof">
+    <div class="container">
+      <p class="trust-text reveal">Dipercaya oleh pekerja profesional, freelancer, dan pelaku UMKM di seluruh Indonesia</p>
+      <div class="trust-logos reveal">
+        <div class="trust-logo">Tokopedia</div>
+        <div class="trust-logo">Gojek</div>
+        <div class="trust-logo">Bukalapak</div>
+        <div class="trust-logo">Grab</div>
+        <div class="trust-logo">Shopee</div>
+      </div>
+    </div>
+  </section>
 
-  <!-- ============================================================
-       FITUR UTAMA SECTION
-       4 kartu fitur produk
-       ============================================================ -->
+  <!-- FITUR UTAMA -->
   <section id="fitur">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">Fitur Utama</div>
-        <h2 class="section-title">Semua yang kamu butuhkan,<br>dalam satu chat</h2>
-        <p class="section-sub">Tanpa dashboard ribet, tanpa login-logout. Cukup buka WhatsApp dan mulai catat.</p>
+        <span class="section-label">Fitur Lengkap</span>
+        <h2 class="section-title">Semua yang kamu butuhkan, dalam satu chat</h2>
+        <p class="section-sub">Dirancang khusus untuk alur keuangan modern. Tanpa dashboard ribet, tanpa login-logout.</p>
       </div>
-
       <div class="features-grid">
-
-        <!-- Fitur 1 -->
         <div class="feature-card reveal">
-          <span class="feature-icon">💬</span>
-          <div class="feature-title">Catat Lewat Chat</div>
-          <p class="feature-desc">
-            Kirim pesan seperti biasa. Dompetku otomatis memahami dan mencatat
-            pemasukan atau pengeluaranmu tanpa form apa pun.
-          </p>
+          <span class="feature-icon" aria-hidden="true">💬</span>
+          <h3 class="feature-title">Input Natural Language</h3>
+          <p class="feature-desc">Tulis seperti ngobrol. "Bayar ojol 25rb", "Gajian 3jt". Bot otomatis paham tanpa form.</p>
         </div>
-
-        <!-- Fitur 2 -->
-        <div class="feature-card reveal" style="transition-delay:0.1s;">
-          <span class="feature-icon">📊</span>
-          <div class="feature-title">Ringkasan Otomatis</div>
-          <p class="feature-desc">
-            Minta ringkasan harian, mingguan, atau bulanan kapan saja.
-            Langsung tampil di chat — jelas, rapi, dan mudah dibaca.
-          </p>
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">🧠</span>
+          <h3 class="feature-title">Smart Categorization</h3>
+          <p class="feature-desc">AI mengelompokkan transaksi secara real-time: Makan, Transport, Gaji, Investasi, dll.</p>
         </div>
-
-        <!-- Fitur 3 -->
-        <div class="feature-card reveal" style="transition-delay:0.2s;">
-          <span class="feature-icon">📱</span>
-          <div class="feature-title">Tanpa Aplikasi Baru</div>
-          <p class="feature-desc">
-            Tidak perlu instal apa pun. Cukup WhatsApp yang sudah ada di HP kamu.
-            Langsung pakai, langsung jalan.
-          </p>
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">📊</span>
+          <h3 class="feature-title">Laporan Instan</h3>
+          <p class="feature-desc">Ketik "laporan" dan dapatkan ringkasan harian/mingguan/bulanan dalam format rapi.</p>
         </div>
-
-        <!-- Fitur 4 -->
-        <div class="feature-card reveal" style="transition-delay:0.3s;">
-          <span class="feature-icon">🏪</span>
-          <div class="feature-title">Untuk Siapa Saja</div>
-          <p class="feature-desc">
-            Cocok untuk keuangan pribadi, usaha kecil (UMKM), hingga catatan
-            harian yang sering terlupakan.
-          </p>
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">🔔</span>
+          <h3 class="feature-title">Budget Alert</h3>
+          <p class="feature-desc">Notifikasi otomatis saat pengeluaran mendekati batas budget yang kamu tentukan.</p>
         </div>
-
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">🔄</span>
+          <h3 class="feature-title">Multi-Device Sync</h3>
+          <p class="feature-desc">Catat dari HP manapun. Data tersimpan aman di cloud & tersinkron sempurna.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">📈</span>
+          <h3 class="feature-title">Visualisasi Data</h3>
+          <p class="feature-desc">Grafik pie & bar otomatis dikirim via chat untuk melihat pola keuanganmu.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">🏪</span>
+          <h3 class="feature-title">Mode UMKM</h3>
+          <p class="feature-desc">Pisahkan keuangan pribadi & bisnis. Lacak omzet, modal, dan laba bersih otomatis.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">🛡️</span>
+          <h3 class="feature-title">Privasi Terjamin</h3>
+          <p class="feature-desc">Enkripsi end-to-end. Data hanya milikmu. Tidak dijual, tidak dibagikan.</p>
+        </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ============================================================
-       CARA PAKAI SECTION
-       3 langkah mudah
-       ============================================================ -->
-  <section id="cara-pakai">
+  <!-- ALUR PROSES -->
+  <section id="proses">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">Cara Pakai</div>
-        <h2 class="section-title">Mulai dalam 3 langkah</h2>
-        <p class="section-sub">Serius, semudah itu. Tidak perlu tutorial panjang.</p>
+        <span class="section-label">Cara Kerja</span>
+        <h2 class="section-title">Alur Proses Bot Keuangan</h2>
+        <p class="section-sub">Hanya 3 detik dari pesan masuk sampai laporan siap. Tanpa setup rumit.</p>
       </div>
-
-      <div class="steps-grid">
-
-        <!-- Langkah 1 -->
-        <div class="step-card reveal">
+      <div class="process-flow">
+        <div class="step reveal">
           <div class="step-number">1</div>
-          <span class="step-icon">💬</span>
-          <div class="step-title">Chat ke Dompetku</div>
-          <p class="step-desc">
-            Buka WhatsApp, cari kontak Dompetku, dan kirim pesan pertamamu.
-            Tidak perlu daftar akun — langsung aktif.
-          </p>
+          <h3 class="step-title">Kirim Pesan</h3>
+          <p class="step-desc">Chat ke nomor Dompetku dengan format bebas. Bot menerima & memvalidasi input.</p>
         </div>
-
-        <!-- Langkah 2 -->
-        <div class="step-card reveal" style="transition-delay:0.15s;">
+        <div class="step-arrow reveal" aria-hidden="true">→</div>
+        <div class="step reveal">
           <div class="step-number">2</div>
-          <span class="step-icon">✏️</span>
-          <div class="step-title">Kirim Catatan Keuangan</div>
-          <p class="step-desc">
-            Tulis pengeluaran atau pemasukan dalam bahasa sehari-hari.
-            Misalnya: <em>"bayar ojol 25rb"</em> atau <em>"gajian 3 juta"</em>.
-          </p>
+          <h3 class="step-title">AI Proses</h3>
+          <p class="step-desc">NLP engine mengekstrak nominal, kategori, tanggal, dan menyesuaikan saldo real-time.</p>
         </div>
-
-        <!-- Langkah 3 -->
-        <div class="step-card reveal" style="transition-delay:0.3s;">
+        <div class="step-arrow reveal" aria-hidden="true">→</div>
+        <div class="step reveal">
           <div class="step-number">3</div>
-          <span class="step-icon">📈</span>
-          <div class="step-title">Dapat Ringkasan Instan</div>
-          <p class="step-desc">
-            Ketik <em>"ringkasan"</em> dan langsung terima laporan keuanganmu —
-            rapi, akurat, dan siap dibaca kapan saja.
-          </p>
+          <h3 class="step-title">Konfirmasi</h3>
+          <p class="step-desc">Bot membalas dengan ringkasan transaksi. Edit/koreksi langsung via chat jika perlu.</p>
         </div>
-
+        <div class="step-arrow reveal" aria-hidden="true">→</div>
+        <div class="step reveal">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Insight Siap</h3>
+          <p class="step-desc">Data masuk dashboard internal. Minta laporan kapan saja, otomatis ter-generate.</p>
+        </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ============================================================
-       KEUNGGULAN / MANFAAT SECTION
-       Background biru tua dengan kartu benefit
-       ============================================================ -->
-  <section id="keunggulan">
+  <!-- PAKET HARGA -->
+  <section id="harga">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">Keunggulan</div>
-        <h2 class="section-title">Dirancang untuk yang<br>tidak suka ribet</h2>
-        <p class="section-sub">Tidak ada kurva belajar. Tidak ada setup rumit. Langsung terasa manfaatnya.</p>
+        <span class="section-label">Pilih Paket</span>
+        <h2 class="section-title">Investasi Cerdas untuk Keuanganmu</h2>
+        <p class="section-sub">Mulai gratis, upgrade saat butuh lebih. Tanpa biaya tersembunyi.</p>
       </div>
-
-      <div class="benefits-grid">
-
-        <div class="benefit-item reveal">
-          <span class="benefit-icon">⚡</span>
-          <div class="benefit-title">Cepat</div>
-          <p class="benefit-desc">Catat dalam hitungan detik. Respons instan, tanpa loading, tanpa menunggu.</p>
+      <div class="pricing-grid">
+        <!-- Demo -->
+        <div class="price-card reveal">
+          <h3 class="price-title">Demo</h3>
+          <p class="price-sub">Coba sebelum komitmen</p>
+          <div class="price-amount">Gratis</div>
+          <ul class="price-features">
+            <li class="check">5 Transaksi / hari</li>
+            <li class="check">Kategori dasar otomatis</li>
+            <li class="check">Ringkasan harian via chat</li>
+            <li class="cross">Export data / PDF</li>
+            <li class="cross">Budget Alert</li>
+            <li class="cross">Mode UMKM</li>
+          </ul>
+          <a href="https://wa.me/6283121376756?text=Halo%20saya%20mau%20coba%20paket%20Demo" class="btn btn-secondary full-width" target="_blank" rel="noopener noreferrer">Coba Gratis</a>
         </div>
 
-        <div class="benefit-item reveal" style="transition-delay:0.1s;">
-          <span class="benefit-icon">🎯</span>
-          <div class="benefit-title">Praktis</div>
-          <p class="benefit-desc">Satu platform untuk semua. Tidak perlu buka aplikasi berbeda hanya untuk mencatat uang.</p>
+        <!-- Pro (Featured) -->
+        <div class="price-card featured reveal">
+          <div class="popular-tag">Paling Laris</div>
+          <h3 class="price-title">Pro</h3>
+          <p class="price-sub">Untuk kebutuhan harian serius</p>
+          <div class="price-amount">Rp 29rb<span>/bulan</span></div>
+          <ul class="price-features">
+            <li class="check">Unlimited Transaksi</li>
+            <li class="check">Smart Categorization AI</li>
+            <li class="check">Laporan Mingguan & Bulanan</li>
+            <li class="check">Budget Alert & Notifikasi</li>
+            <li class="check">Export ke CSV/PDF</li>
+            <li class="check">Support Prioritas 24/7</li>
+          </ul>
+          <a href="https://wa.me/6283121376756?text=Halo%20saya%20mau%20subscribe%20paket%20Pro" class="btn btn-primary full-width" target="_blank" rel="noopener noreferrer">Langganan Sekarang</a>
         </div>
 
-        <div class="benefit-item reveal" style="transition-delay:0.2s;">
-          <span class="benefit-icon">😊</span>
-          <div class="benefit-title">Mudah Dipakai</div>
-          <p class="benefit-desc">Antarmuka-nya adalah chat biasa. Kalau bisa WhatsApp-an, kamu bisa pakai Dompetku.</p>
+        <!-- Unlimited -->
+        <div class="price-card reveal">
+          <h3 class="price-title">Unlimited</h3>
+          <p class="price-sub">Sekali bayar, selamanya</p>
+          <div class="price-amount">Rp 300rb<span class="lifetime-label">sekali bayar</span></div>
+          <ul class="price-features">
+            <li class="check">Semua Fitur Pro</li>
+            <li class="check">Akses Seumur Hidup</li>
+            <li class="check">Mode UMKM & Multi-Akun</li>
+            <li class="check">Custom Rule & Auto-Reply</li>
+            <li class="check">Backup Cloud Premium</li>
+            <li class="check">Update Fitur Gratis Selamanya</li>
+          </ul>
+          <a href="https://wa.me/6283121376756?text=Halo%20saya%20mau%20beli%20paket%20Unlimited" class="btn btn-secondary full-width" target="_blank" rel="noopener noreferrer">Beli Lifetime</a>
         </div>
-
-        <div class="benefit-item reveal" style="transition-delay:0.3s;">
-          <span class="benefit-icon">🧠</span>
-          <div class="benefit-title">Tidak Bikin Lupa</div>
-          <p class="benefit-desc">Dompetku selalu ada di HP kamu. Tinggal buka chat, catat, selesai — tidak pakai mikir lama.</p>
-        </div>
-
-        <div class="benefit-item reveal" style="transition-delay:0.4s;">
-          <span class="benefit-icon">🔒</span>
-          <div class="benefit-title">Privasi Terjaga</div>
-          <p class="benefit-desc">Data keuanganmu hanya ada di percakapanmu. Aman, personal, dan tidak bocor ke mana-mana.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       KENAPA DOMPETKU SECTION
-       Pengganti testimoni — berisi alasan & statistik dekoratif
-       ============================================================ -->
-  <section id="kenapa">
-    <div class="container">
-      <div class="why-grid">
-
-        <!-- Kiri: daftar alasan -->
-        <div class="reveal">
-          <div class="section-label">Kenapa Dompetku?</div>
-          <h2 class="section-title">Bukan sekedar catatan.<br>Tapi kontrol penuh.</h2>
-          <p class="section-sub">
-            Banyak orang tahu uangnya habis, tapi tidak tahu ke mana.
-            Dompetku hadir supaya kamu tidak lagi tebak-tebakan soal uang sendiri.
-          </p>
-
-          <div class="why-list">
-            <div class="why-item">
-              <div class="why-check">✓</div>
-              <div class="why-text">
-                <strong>Tidak perlu hafal kategori</strong>
-                <span>Tulis saja seperti ngobrol — Dompetku yang mengkategorikan otomatis.</span>
-              </div>
-            </div>
-            <div class="why-item">
-              <div class="why-check">✓</div>
-              <div class="why-text">
-                <strong>Tersedia 24/7</strong>
-                <span>Tengah malam habis jajan? Catat sekarang juga sebelum lupa.</span>
-              </div>
-            </div>
-            <div class="why-item">
-              <div class="why-check">✓</div>
-              <div class="why-text">
-                <strong>Cocok untuk gaya hidup dinamis</strong>
-                <span>Di perjalanan, di kantor, atau santai di rumah — selalu bisa mencatat.</span>
-              </div>
-            </div>
-            <div class="why-item">
-              <div class="why-check">✓</div>
-              <div class="why-text">
-                <strong>Mulai gratis, tanpa kartu kredit</strong>
-                <span>Coba dulu, rasakan manfaatnya, baru putuskan lanjut atau tidak.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kanan: kartu statistik dekoratif -->
-        <div class="why-visual reveal" style="transition-delay:0.2s;">
-          <div class="stat-card">
-            <div class="stat-num">3 detik</div>
-            <div class="stat-label">Rata-rata waktu mencatat satu transaksi</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">0</div>
-            <div class="stat-label">Aplikasi tambahan yang perlu diinstal</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">24/7</div>
-            <div class="stat-label">Tersedia setiap saat, tanpa gangguan</div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ============================================================
-       CTA FINAL SECTION
-       Tombol WhatsApp besar sebagai konversi utama
-       ============================================================ -->
+  <!-- CTA FINAL -->
   <section id="cta">
-    <div class="container">
-      <div class="reveal">
-        <div class="section-label">Siap Mulai?</div>
-        <h2 class="cta-title">Tidak ada alasan untuk<br>terus bingung soal uang.</h2>
-        <p class="cta-sub">
-          Satu chat. Satu langkah. Keuanganmu lebih terkontrol mulai hari ini.
-        </p>
-
-        <!-- Tombol WA utama -->
-        <a href="https://wa.me/6283121376756" target="_blank" rel="noopener" class="btn-wa">
-          <!-- SVG WhatsApp inline -->
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Mulai Catat Sekarang
-        </a>
-
-        <p class="cta-note">Gratis untuk dicoba · Tidak perlu daftar · Cukup WhatsApp</p>
-      </div>
+    <div class="container reveal">
+      <h2 class="cta-title">Tidak ada alasan untuk terus bingung soal uang.</h2>
+      <p class="cta-sub">Satu chat. Satu langkah. Keuanganmu lebih terkontrol mulai hari ini.</p>
+      <a href="https://wa.me/6283121376756" class="btn-wa" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.06-1.34A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.2-.51-4.48-1.37l-.32-.19-3.02.8.81-2.94-.21-.34A7.93 7.93 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.39-5.96c-.24-.12-1.41-.69-1.62-.77-.21-.08-.37-.12-.52.12-.15.24-.58.77-.71.92-.13.15-.26.17-.49.06-.23-.11-.97-.36-1.85-1.14-.68-.61-1.14-1.36-1.27-1.59-.13-.23-.01-.35.1-.46.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.52-1.26-.72-1.74-.19-.46-.38-.4-.52-.41l-.44-.01c-.15 0-.39.06-.6.3-.21.24-.81.79-.81 1.93 0 1.14.83 2.24.94 2.39.11.15 1.62 2.47 3.92 3.46.55.24.98.38 1.31.49.55.18 1.05.15 1.45.09.44-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
+        Mulai Catat Sekarang
+      </a>
+      <p class="cta-note">Gratis untuk dicoba · Tidak perlu daftar · Cukup WhatsApp</p>
     </div>
   </section>
 
-
-  <!-- ============================================================
-       FOOTER
-       Nama brand + copyright + link navigasi kecil
-       ============================================================ -->
+  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <a href="#hero" class="footer-brand">Dompet<span>ku</span></a>
-
-        <p class="footer-copy">© 2026 Dompetku. Semua hak dilindungi.</p>
-
-        <ul class="footer-links">
-          <li><a href="#fitur">Fitur</a></li>
-          <li><a href="#cara-pakai">Cara Pakai</a></li>
-          <li><a href="#keunggulan">Keunggulan</a></li>
-          <li><a href="#cta">Mulai</a></li>
-        </ul>
-      </div>
+    <div class="container footer-inner">
+      <a href="#" class="footer-brand">Dompet<span>ku</span></a>
+      <p class="footer-copy">© 2026 Dompetku. Semua hak dilindungi.</p>
+      <ul class="footer-links">
+        <li><a href="#fitur">Fitur</a></li>
+        <li><a href="#proses">Alur</a></li>
+        <li><a href="#harga">Harga</a></li>
+      </ul>
     </div>
   </footer>
 
-
-  <!-- ============================================================
-       JAVASCRIPT
-       1. Smooth scroll untuk anchor nav
-       2. Hamburger toggle (mobile)
-       3. Intersection Observer untuk animasi fade-in reveal
-       ============================================================ -->
+  <!-- SCRIPT -->
   <script>
-    /* ── 1. SMOOTH SCROLL ────────────────────────────────────── */
-    // Tangkap semua link anchor dan scroll halus ke target section
-    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        var target = document.querySelector(this.getAttribute('href'));
-        if (!target) return;
-        e.preventDefault();
-
-        // Offset 70px untuk mengkompensasi sticky header
-        var offsetTop = target.getBoundingClientRect().top + window.scrollY - 70;
-        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-
-        // Tutup mobile menu setelah klik
-        navLinks.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-
-    /* ── 2. HAMBURGER TOGGLE (MOBILE) ───────────────────────── */
-    var hamburger = document.getElementById('hamburger');
-    var navLinks  = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', function() {
-      var isOpen = navLinks.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen.toString());
-    });
-
-    // Tutup menu saat klik di luar area nav
-    document.addEventListener('click', function(e) {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-
-    /* ── 3. FADE-IN REVEAL ANIMATION ────────────────────────── */
-    // IntersectionObserver memantau elemen .reveal
-    // Saat elemen masuk viewport → tambahkan class .visible
-    // CSS transition yang sudah didefinisikan akan menganimasikan fade + slide
-    var revealObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
+    // Scroll Reveal Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // Lepas observasi setelah animasi berjalan (efisiensi)
-          revealObserver.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.12,   // mulai animasi saat 12% elemen terlihat
-      rootMargin: '0px 0px -40px 0px'  // sedikit offset agar tidak terlalu dini
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', () => {
+      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
     });
 
-    // Daftarkan semua elemen .reveal ke observer
-    document.querySelectorAll('.reveal').forEach(function(el) {
-      revealObserver.observe(el);
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
     });
 
-
-    /* ── 4. ACTIVE NAV HIGHLIGHT (opsional, bonus UX) ─────── */
-    // Tandai link nav yang aktif berdasarkan section yang sedang ditampilkan
-    var sections = document.querySelectorAll('section[id]');
-    var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
-
-    function updateActiveNav() {
-      var scrollY = window.scrollY + 100; // sedikit offset
-      sections.forEach(function(section) {
-        var top    = section.offsetTop;
-        var height = section.offsetHeight;
-        var id     = '#' + section.getAttribute('id');
-        if (scrollY >= top && scrollY < top + height) {
-          navAnchors.forEach(function(a) {
-            a.style.color = (a.getAttribute('href') === id)
-              ? 'var(--blue-mid)'
-              : '';
-          });
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
-    }
+    });
 
-    // Throttle scroll event agar tidak terlalu sering dipanggil
-    var ticking = false;
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        requestAnimationFrame(function() {
-          updateActiveNav();
-          ticking = false;
-        });
-        ticking = true;
-      }
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
-
 </body>
 </html>
