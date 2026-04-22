@@ -305,6 +305,33 @@
 
   <!-- SCRIPT -->
   <script>
+    // Data Simulasi
+const names = ["Andi", "Siti", "Budi", "Dewi", "Ridwan", "Putri", "Fajar"];
+const cities = ["Jakarta", "Surabaya", "Bandung", "Cirebon", "Medan"];
+
+function showNotification() {
+  const toast = document.getElementById('social-toast');
+  const message = document.getElementById('toast-message');
+  
+  // Randomisasi data
+  const randomName = names[Math.floor(Math.random() * names.length)];
+  const randomCity = cities[Math.floor(Math.random() * cities.length)];
+  const randomPhone = `0812-xxxx-${Math.floor(1000 + Math.random() * 9000)}`;
+  
+  message.innerHTML = `${randomName} (${randomPhone}) dari ${randomCity} baru saja mendaftar!`;
+  
+  // Tampilkan
+  toast.classList.add('show');
+  
+  // Hilangkan setelah 3 detik
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
+
+// Jalankan setiap 7 detik (Saran: jangan 1 detik agar tidak spam)
+setInterval(showNotification, 1000);
+
     // Scroll Reveal Animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -369,5 +396,14 @@
       });
     });
   </script>
+  <div id="social-toast" class="social-toast">
+  <div class="toast-content">
+    <div class="toast-avatar">✓</div>
+    <div class="toast-text">
+      <p id="toast-message">Budi dari Jakarta baru saja bergabung!</p>
+      <small id="toast-time">Baru saja</small>
+    </div>
+  </div>
+</div>
 </body>
 </html>
