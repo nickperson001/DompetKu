@@ -305,32 +305,67 @@
 
   <!-- SCRIPT -->
   <script>
-    // Data Simulasi
-const names = ["Andi", "Siti", "Budi", "Dewi", "Ridwan", "Putri", "Fajar"];
-const cities = ["Jakarta", "Surabaya", "Bandung", "Cirebon", "Medan"];
 
-function showNotification() {
+   const registrationData = [
+  { name: "Ridwan", city: "Cirebon", action: "Langganan Paket Unlimited", phone: "0813-xxxx-9921" },
+  { name: "Siti Aminah", city: "Jakarta", action: "Mencatat transaksi pertama", phone: "0857-xxxx-1200" },
+  { name: "Budi Santoso", city: "Surabaya", action: "Upgrade ke Paket Pro", phone: "0812-xxxx-4432" },
+  { name: "Dewi Putri", city: "Bandung", action: "Baru saja bergabung", phone: "0895-xxxx-8871" },
+  { name: "Fajar Pratama", city: "Medan", action: "Ekspor laporan bulanan", phone: "0821-xxxx-5562" },
+  { name: "Andi Wijaya", city: "Semarang", action: "Aktivasi Mode UMKM", phone: "0811-xxxx-3329" },
+  { name: "Lestari", city: "Yogyakarta", action: "Bergabung di Paket Demo", phone: "0878-xxxx-6610" },
+  { name: "Hendra Kurniawan", city: "Palembang", action: "Menghubungkan rekening bank", phone: "0813-xxxx-4455" },
+  { name: "Maya Saputri", city: "Makassar", action: "Baru saja mendaftar", phone: "0852-xxxx-1122" },
+  { name: "Ahmad Fauzi", city: "Malang", action: "Berhasil hemat 20% bulan ini", phone: "0819-xxxx-3388" },
+  { name: "Rina Marlina", city: "Denpasar", action: "Upgrade ke Paket Pro", phone: "0877-xxxx-9090" },
+  { name: "Dedi Irawan", city: "Balikpapan", action: "Mencatat pengeluaran usaha", phone: "0812-xxxx-7766" },
+  { name: "Siska Amelia", city: "Manado", action: "Baru saja bergabung", phone: "0896-xxxx-5544" },
+  { name: "Eko Prasetyo", city: "Solo", action: "Aktivasi pengingat harian", phone: "0856-xxxx-2233" },
+  { name: "Indah Permata", city: "Banjarmasin", action: "Langganan Paket Unlimited", phone: "0822-xxxx-1010" },
+  { name: "Reza Mahendra", city: "Pekanbaru", action: "Mencatat pemasukan baru", phone: "0813-xxxx-6677" },
+  { name: "Gita Savitri", city: "Padang", action: "Ekspor laporan PDF", phone: "0853-xxxx-8899" },
+  { name: "Yusuf Mansur", city: "Pontianak", action: "Baru saja mendaftar", phone: "0811-xxxx-4455" },
+  { name: "Novianti", city: "Lampung", action: "Upgrade ke Paket Pro", phone: "0819-xxxx-2211" },
+  { name: "Bambang Soesatyo", city: "Bogor", action: "Aktivasi Mode Bisnis", phone: "0812-xxxx-3344" },
+  { name: "Tania Putri", city: "Tangerang", action: "Mencatat biaya operasional", phone: "0858-xxxx-7788" },
+  { name: "Aris Munandar", city: "Banda Aceh", action: "Baru saja bergabung", phone: "0821-xxxx-9900" },
+  { name: "Wulandari", city: "Mataram", action: "Langganan Paket Pro", phone: "0878-xxxx-1122" },
+  { name: "Kevin Sanjaya", city: "Jayapura", action: "Mencatat transaksi harian", phone: "0813-xxxx-5544" },
+  { name: "Putri Rahayu", city: "Samarinda", action: "Berhasil menabung 1jt minggu ini", phone: "0852-xxxx-6677" }
+];
+
+let currentIndex = 0;
+
+function showSocialProof() {
   const toast = document.getElementById('social-toast');
-  const message = document.getElementById('toast-message');
+  const userEl = document.getElementById('toast-user');
+  const actionEl = document.getElementById('toast-action');
   
-  // Randomisasi data
-  const randomName = names[Math.floor(Math.random() * names.length)];
-  const randomCity = cities[Math.floor(Math.random() * cities.length)];
-  const randomPhone = `0812-xxxx-${Math.floor(1000 + Math.random() * 9000)}`;
+  // Ambil data berdasarkan index saat ini
+  const data = registrationData[currentIndex];
   
-  message.innerHTML = `${randomName} (${randomPhone}) dari ${randomCity} baru saja mendaftar!`;
+  // Update konten
+  userEl.innerText = `${data.name} (${data.phone})`;
+  actionEl.innerText = `${data.action} dari ${data.city}`;
   
-  // Tampilkan
+  // Animasi Masuk
   toast.classList.add('show');
   
-  // Hilangkan setelah 3 detik
+  // Durasi tampil (3.5 detik)
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 3000);
+    
+    // Pindah ke data berikutnya setelah toast hilang (looping)
+    currentIndex = (currentIndex + 1) % registrationData.length;
+  }, 3500);
 }
 
-// Jalankan setiap 7 detik (Saran: jangan 1 detik agar tidak spam)
-setInterval(showNotification, 1000);
+// Menjalankan pertama kali setelah 2 detik halaman dimuat
+setTimeout(() => {
+  showSocialProof();
+  // Interval antar notifikasi (7 detik agar tidak terlalu cepat)
+  setInterval(showSocialProof, 2000);
+}, 2000);
 
     // Scroll Reveal Animation
     const observer = new IntersectionObserver((entries) => {
@@ -397,12 +432,13 @@ setInterval(showNotification, 1000);
     });
   </script>
   <div id="social-toast" class="social-toast">
+  <div class="toast-icon-wrapper">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+  </div>
   <div class="toast-content">
-    <div class="toast-avatar">✓</div>
-    <div class="toast-text">
-      <p id="toast-message">Budi dari Jakarta baru saja bergabung!</p>
-      <small id="toast-time">Baru saja</small>
-    </div>
+    <span class="toast-title" id="toast-user">Memuat data...</span>
+    <span class="toast-subtitle" id="toast-action">Baru saja bergabung ke Paket Pro</span>
+    <span class="toast-time">Live • Baru Saja</span>
   </div>
 </div>
 </body>
