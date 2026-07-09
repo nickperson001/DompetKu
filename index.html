@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tata Business Suite - Pencatat keuangan & manajemen stok inventory (stock opname) via WhatsApp. Kelola bisnis tanpa ribet.">
+  <meta name="description" content="Tata - Asisten pencatat keuangan & stok usaha via WhatsApp. Cukup chat, semua tercatat rapi.">
   <meta name="theme-color" content="#0f172a">
-  <title>Tata Business Suite – Keuangan & Inventory</title>
+  <title>Tata – Asisten Keuangan & Stok via WhatsApp</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,19 @@
 
   <header>
     <div class="container nav-container">
-      <a href="#" class="logo" aria-label="Tata Business Suite Home">Tata<span> Business Suite</span></a>
+      <a href="#" class="logo" aria-label="Tata Home">
+        <svg class="logo-mark" viewBox="0 0 40 40" width="32" height="32" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
+          <path d="M11 14.5h18M20 14.5v15" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#3b82f6"/>
+              <stop offset="1" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        Tata<span> Asisten Usaha</span>
+      </a>
       <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
       </button>
@@ -35,10 +47,10 @@
       <div class="hero-copy reveal">
         <span class="badge">
           <span class="badge-dot"></span>
-          AI-Powered Business Suite
+          Asisten Bisnis via WhatsApp
         </span>
         <h1 class="hero-title">Keuangan & Stok Aman? <br><span class="gradient-text">Kami bantu catat.</span></h1>
-        <p class="hero-sub">Kelola arus kas (pemasukan & pengeluaran) serta manajemen stok inventory (stock opname) langsung lewat chat WhatsApp. Solusi 3D cerdas untuk bisnis Anda.</p>
+        <p class="hero-sub">Kelola arus kas (pemasukan & pengeluaran) serta manajemen stok inventory (stock opname) langsung lewat chat WhatsApp. Cukup ngobrol dengan Tata, semua tercatat otomatis.</p>
         <div class="hero-stats">
           <div class="stat-item">
             <span class="stat-number">10K+</span>
@@ -111,12 +123,12 @@
 
   <section id="testimoni" class="social-proof">
     <div class="container">
-      <p class="trust-text reveal">Dipercaya oleh pabrik, distributor, dan pelaku retail di seluruh Indonesia</p>
+      <p class="trust-text reveal">Dipercaya oleh warung, toko kelontong, dan pelaku UMKM di seluruh Indonesia</p>
       <div class="trust-logos reveal">
-        <div class="trust-logo">Distributor A</div>
-        <div class="trust-logo">Gudang Makmur</div>
+        <div class="trust-logo">Warung Bu Siti</div>
         <div class="trust-logo">Toko Jaya</div>
-        <div class="trust-logo">Retail Sentosa</div>
+        <div class="trust-logo">Kedai Kopi Makmur</div>
+        <div class="trust-logo">Grosir Sembako Berkah</div>
         <div class="trust-logo">UMKM Maju</div>
       </div>
     </div>
@@ -125,8 +137,8 @@
   <section id="fitur">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">Fitur Lengkap 3D</span>
-        <h2 class="section-title">Manajemen Bisnis dalam Genggaman</h2>
+        <span class="section-label">Fitur Lengkap</span>
+        <h2 class="section-title">Kelola Usaha dalam Genggaman</h2>
         <p class="section-sub">Solusi terintegrasi untuk memantau uang masuk-keluar sekaligus mengontrol sediaan barang tanpa software rumit.</p>
       </div>
       <div class="features-grid">
@@ -153,7 +165,7 @@
         <div class="feature-card reveal card-3d">
           <span class="feature-icon" aria-hidden="true">🔄</span>
           <h3 class="feature-title">Multi-Admin / Cabang</h3>
-          <p class="feature-desc">Hubungkan beberapa nomor staff gudang atau kasir ke satu database utama Tata Business Suite.</p>
+          <p class="feature-desc">Hubungkan beberapa nomor staff gudang atau kasir ke satu database utama Tata.</p>
         </div>
         <div class="feature-card reveal card-3d">
           <span class="feature-icon" aria-hidden="true">🛡️</span>
@@ -240,7 +252,7 @@
 
         <div class="price-card reveal card-3d">
           <h3 class="price-title">Enterprise</h3>
-          <p class="price-sub">Solusi pabrik & distributor</p>
+          <p class="price-sub">Untuk usaha yang siap naik kelas</p>
           <div class="price-amount">Rp 499rb<span class="lifetime-label">sekali bayar</span></div>
           <ul class="price-features">
             <li class="check">Semua Fitur Bisnis Pro</li>
@@ -248,7 +260,7 @@
             <li class="check">Multi-Gudang & Multi-Cabang</li>
             <li class="check">API Integration ke POS/Kasir</li>
             <li class="check">Custom Rule AI Khusus</li>
-            <li class="check">Dedicated Account Manager</li>
+            <li class="check">Pendamping Bisnis Khusus</li>
           </ul>
           <a href="https://wa.me/6283121376756?text=Halo%20saya%20mau%20beli%20paket%20Enterprise" class="btn btn-secondary full-width" target="_blank" rel="noopener noreferrer">Beli Lifetime</a>
         </div>
@@ -259,7 +271,7 @@
   <section id="cta">
     <div class="container reveal">
       <h2 class="cta-title">Tinggalkan buku catatan manual Anda.</h2>
-      <p class="cta-sub">Satu aplikasi chat. Arus uang terkontrol, stok gudang termonitor. Rasakan kemudahan manajemen 3D bersama Tata Business Suite.</p>
+      <p class="cta-sub">Satu aplikasi chat. Arus uang terkontrol, stok gudang termonitor. Rasakan kemudahan mengelola usaha bersama Tata.</p>
       <a href="https://wa.me/6283121376756" class="btn-wa" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.06-1.34A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.2-.51-4.48-1.37l-.32-.19-3.02.8.81-2.94-.21-.34A7.93 7.93 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.39-5.96c-.24-.12-1.41-.69-1.62-.77-.21-.08-.37-.12-.52.12-.15.24-.58.77-.71.92-.13.15-.26.17-.49.06-.23-.11-.97-.36-1.85-1.14-.68-.61-1.14-1.36-1.27-1.59-.13-.23-.01-.35.1-.46.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.52-1.26-.72-1.74-.19-.46-.38-.4-.52-.41l-.44-.01c-.15 0-.39.06-.6.3-.21.24-.81.79-.81 1.93 0 1.14.83 2.24.94 2.39.11.15 1.62 2.47 3.92 3.46.55.24.98.38 1.31.49.55.18 1.05.15 1.45.09.44-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
         Mulai Sinkronisasi Sekarang
@@ -270,8 +282,20 @@
 
   <footer>
     <div class="container footer-inner">
-      <a href="#" class="footer-brand">Tata<span>Business Suite</span></a>
-      <p class="footer-copy">© 2026 Tata Business Suite. Hak Cipta Dilindungi.</p>
+      <a href="#" class="footer-brand">
+        <svg class="logo-mark" viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="url(#logoGradFooter)"/>
+          <path d="M11 14.5h18M20 14.5v15" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGradFooter" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#3b82f6"/>
+              <stop offset="1" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        Tata<span>Asisten Usaha</span>
+      </a>
+      <p class="footer-copy">© 2026 Tata. Hak Cipta Dilindungi.</p>
       <ul class="footer-links">
         <li><a href="#fitur">Fitur & Inventory</a></li>
         <li><a href="#proses">Sistem</a></li>
@@ -282,13 +306,13 @@
 
   <script>
    const registrationData = [
-  { name: "Ridwan Gudang", city: "Cirebon", action: "Update stock opname harian", phone: "0813-xxxx-9921" },
+  { name: "Warung Bu Ridwan", city: "Cirebon", action: "Update stock opname harian", phone: "0813-xxxx-9921" },
   { name: "Toko Sinar", city: "Jakarta", action: "Mengecek laporan laba-rugi", phone: "0857-xxxx-1200" },
-  { name: "Budi Logistik", city: "Surabaya", action: "Upgrade ke Paket Enterprise", phone: "0812-xxxx-4432" },
-  { name: "Grosir Dewi", city: "Bandung", action: "Menambahkan 50 item inventory", phone: "0895-xxxx-8871" },
-  { name: "CV Pratama", city: "Medan", action: "Menerima notifikasi stok menipis", phone: "0821-xxxx-5562" },
-  { name: "Andi Retail", city: "Semarang", action: "Menghubungkan cabang baru", phone: "0811-xxxx-3329" },
-  { name: "Lestari", city: "Yogyakarta", action: "Bergabung di Tata Business Suite", phone: "0878-xxxx-6610" }
+  { name: "Kedai Kopi Budi", city: "Surabaya", action: "Upgrade ke Paket Bisnis Pro", phone: "0812-xxxx-4432" },
+  { name: "Toko Sembako Dewi", city: "Bandung", action: "Menambahkan 50 item stok", phone: "0895-xxxx-8871" },
+  { name: "Warung Pratama", city: "Medan", action: "Menerima notifikasi stok menipis", phone: "0821-xxxx-5562" },
+  { name: "Toko Kelontong Andi", city: "Semarang", action: "Menghubungkan cabang baru", phone: "0811-xxxx-3329" },
+  { name: "Lestari", city: "Yogyakarta", action: "Bergabung bersama Tata", phone: "0878-xxxx-6610" }
 ];
 
 let currentIndex = 0;
